@@ -2,22 +2,18 @@
 
 function get_union(collection_a, collection_b) {
   //在这里写入代码
-  var a = collection_a.sort(sortNumber);
-  var b = collection_b.sort(sortNumber);
-  var array = [];
-
-  for(i = 0; i < collection_a.length; i++){
-    for(j = 0; j < collection_b.length; j++){
+  for(var i = 0; i < collection_a.length; i++){
+    for(var j = 0; j < collection_b.length; j++){
       if(collection_a[i] == collection_b[j]){
-        array.push(collection_a[i]);
-      }else {
-        array.push(collection_a[i]);
-        array.push(collection_b[j]);
+        collection_b.splice(j,1);
       }
     }
   }
+  for(var k = 0; k < collection_b.length; k++){
+    collection_a.push(collection_b[k]);
+  }
 
-  return array;
+  return collection_a;
 
 }
 
