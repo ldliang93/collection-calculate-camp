@@ -7,14 +7,14 @@ function get_integer_interval(number_a, number_b) {
   var array = [];
 
   if(a < b){
-    for(i = a; i <= b; i++){
+    for(var i = a; i <= b; i++){
       array.push(i);
     }
     return array;
   }
 
   if(a > b){
-    for(i = a; i >= b; i--){
+    for(var i = a; i >= b; i--){
       array.push(i);
     }
     return array;

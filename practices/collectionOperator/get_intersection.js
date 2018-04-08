@@ -5,10 +5,10 @@ function get_intersection(collection_a, collection_b) {
   var array = [];
   var a = collection_a;
   var b = collection_b;
-  for(i = 0; i < a.length; i++){
-    for(j = 0; j < b.length; j++){
-      if(a[i] == b[j]){
-        array.push(a[i]);
+  for(var i = 0; i < b.length; i++){
+    for(var j = 0; j < a.length; j++){
+      if(b[i] == a[j]){
+        array.push(b[i]);
       }
     }
   }

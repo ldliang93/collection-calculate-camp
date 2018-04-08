@@ -7,7 +7,7 @@ function get_integer_interval_2(number_a, number_b) {
   var array=[];
 
   if(a < b){
-    for(i = a; i <= b; i++){
+    for(var i = a; i <= b; i++){
       if(i % 2 == 0){
         array.push(i);
       }
@@ -16,7 +16,7 @@ function get_integer_interval_2(number_a, number_b) {
   }
 
   if(a > b){
-    for(i = a; i >= b; i--){
+    for(var i = a; i >= b; i--){
       if(i % 2 == 0){
         array.push(i);
       }

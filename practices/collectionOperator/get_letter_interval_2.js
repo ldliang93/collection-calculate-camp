@@ -2,45 +2,35 @@
 
 function get_letter_interval_2(number_a, number_b) {
   //在这里写入代码
-  var array = [];
-  var a = number_a;
-  var b = number_b;
-  var cz = b - a;
-  var arr = [];
-
-  if(a < b){
-    if(a <= 26 && b <= 26){
-      for(i = 97 + a ; i <= 97 + b; i++){
-        arr.push(fromCharCode(i));
+  var result = [];
+  var letter = ["", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  if (number_a < number_b) {
+    for (var i = number_a; i <= number_b; i++) {
+      if (i % 26 === 0) {
+        result.push(letter[Math.floor(i / 26) - 1].concat(letter[26]));
+      } else {
+        result.push(letter[Math.floor(i / 26)].concat(letter[i % 26]));
       }
     }
-
-    if(a <= 26 && b >26){
-      for(i = 97 + a; i <= 97 + 26; i++){
-        arr.push(fromCharCode(i));
-      }
-      for(j = 97; j<=97 + cz; j++){
-        arr.push(fromCharCode(j));
+  }
+  if (number_a > number_b) {
+    for (var i = number_a; i >= (number_b); i--) {
+      if (i % 26 === 0) {
+        result.push(letter[Math.floor(i / 26) - 1].concat(letter[26]));
+      } else {
+        result.push(letter[Math.floor(i / 26)].concat(letter[i % 26]));
       }
     }
-
-    return array = arr;
   }
-
-  if(a > b){
-    return array = arr.reverse();
-  }
-
-  if(a == b){
-    var y = a % 26;
-    if(a <= 26){
-      array.push(fromCharCode( 97 + a ));
-    }else {
-      array.push(fromCharCode( 97 ));
-      array.push(fromCharCode( 97 + y ));
+  if (number_a === number_b) {
+    if (number_a % 26 === 0) {
+      result.push(letter[Math.floor(number_a / 26) - 1].concat(letter[26]));
+    } else {
+      result.push(letter[Math.floor(number_a / 26)].concat(letter[number_a % 26]));
     }
   }
 
+  return result;
 
 }
 
